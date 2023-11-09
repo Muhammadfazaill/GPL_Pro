@@ -19,7 +19,9 @@ namespace GraphicalProgrammingLanguage
         private Button saveButton = new Button();
         private Button loadButton = new Button();
 
-        
+
+        /// Initializes the GUI components.
+        /// </summary>
         private void InitializeComponent()
         {
             // Create and configure GUI components
@@ -42,6 +44,33 @@ namespace GraphicalProgrammingLanguage
                 keyboardControl.SetActiveTextBox(commandTextBox);
             };
 
+            
+            // add different buttons and their properties
+            runButton.Text = "Run";
+            runButton.Size = new System.Drawing.Size(195, 30);
+            runButton.Location = new System.Drawing.Point(10, 260);
+            runButton.Click += RunButton_Click;
+
+            syntaxCheckButton.Text = "Syntax Check";
+            syntaxCheckButton.Size = new System.Drawing.Size(195, 30);
+            syntaxCheckButton.Location = new System.Drawing.Point(215, 260);
+           // syntaxCheckButton.Click += SyntaxCheckButton_Click;
+
+            saveButton.Text = "Save";
+            saveButton.Size = new System.Drawing.Size(195, 30);
+            saveButton.Location = new System.Drawing.Point(10, 300);
+           // saveButton.Click += SaveButton_Click;
+
+            loadButton.Text = "Load";
+            loadButton.Size = new System.Drawing.Size(195, 30);
+            loadButton.Location = new System.Drawing.Point(215, 300);
+            //loadButton.Click += LoadButton_Click;
+
+            resultBox.Size = new System.Drawing.Size(400, 400);
+            resultBox.Location = new System.Drawing.Point(430, 10);
+            resultBox.BackColor = System.Drawing.Color.LightGray;
+            this.Controls.Add(resultBox);
+           
             // info label
             statusLabel.Text = "Position: {X=0, Y=0}\nFill: Off\nColor: Black";
             statusLabel.Size = new System.Drawing.Size(400, 50);
@@ -68,6 +97,23 @@ namespace GraphicalProgrammingLanguage
             keyboardControl.Visible = true;
         }
 
+        private void RunButton_Click(object? sender, EventArgs e)
+        {
+            string command = commandTextBox.Text.Trim();
+
+            if (command == "")
+            {
+                if (programTextBox.Text.Trim() == "")
+                {
+                    MessageBox.Show("Please enter a command.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    commandTextBox.Text = "RUN";
+                    command = "RUN";
+                }
+            }
 
             [STAThread]
             static void Main()
@@ -78,3 +124,4 @@ namespace GraphicalProgrammingLanguage
             }
         }
     }
+}
