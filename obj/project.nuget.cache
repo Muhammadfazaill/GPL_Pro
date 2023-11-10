@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "FR2KaoEHT5i6EaAl/tiPKLI/eTyF6xJrS17vd7uqyEgHAYjzn6Mce9wk1QHIPLdC6lCB3yON3an8bYiinp2xjw==",
+  "dgSpecHash": "IAnJVHTbizgrHeosA+Q72laxoAQE7Kc/iWYbekTwjismLPil9a/K9toEe4dsV7/sTayqD5C0qJqhg8rSlCuI0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\fahad\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.netcore.platforms\\7.0.0\\microsoft.netcore.platforms.7.0.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\fahad\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
     "C:\\Users\\fahad\\.nuget\\packages\\nunit3testadapter\\4.4.2\\nunit3testadapter.4.4.2.nupkg.sha512"
   ],
