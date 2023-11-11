@@ -52,7 +52,8 @@ namespace GraphicalProgrammingLanguage
             commandTextBox.Enter += (sender, e) =>
             {
                 keyboardControl.SetActiveTextBox(commandTextBox);
-            };//
+            };
+
             // add different buttons and their properties
             runButton.Text = "Run";
             runButton.Size = new System.Drawing.Size(195, 30);
@@ -97,7 +98,7 @@ namespace GraphicalProgrammingLanguage
             this.Controls.Add(loadButton);
             this.Controls.Add(resultBox);
             this.Controls.Add(statusLabel);
-            
+
             keyboardControl = new KeyboardControl();
             this.Controls.Add(keyboardControl);
             keyboardControl.BringToFront();
@@ -105,10 +106,10 @@ namespace GraphicalProgrammingLanguage
             keyboardControl.Visible = true;
         }
 
-        private void RunButton_Click(object ?sender, EventArgs e)
+        private void RunButton_Click(object? sender, EventArgs e)
         {
             string command = commandTextBox.Text.Trim();
-            
+
             if (command == "")
             {
                 if (programTextBox.Text.Trim() == "")
@@ -122,7 +123,7 @@ namespace GraphicalProgrammingLanguage
                     command = "RUN";
                 }
             }
-            
+
             if (command == "RUN")
             {
                 string program = programTextBox.Text;
@@ -151,7 +152,7 @@ namespace GraphicalProgrammingLanguage
             statusLabel.Text = $"Position: {currentPosition}\nFill: {(isFillOn ? "On" : "Off")}\nColor: {currentColor}";
         }
 
-        private void SyntaxCheckButton_Click(object ?sender, EventArgs e)
+        private void SyntaxCheckButton_Click(object? sender, EventArgs e)
         {
             string programText = programTextBox.Text;
 
@@ -165,7 +166,7 @@ namespace GraphicalProgrammingLanguage
             }
         }
 
-        private void SaveButton_Click(object ?sender, EventArgs e)
+        private void SaveButton_Click(object? sender, EventArgs e)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -187,7 +188,7 @@ namespace GraphicalProgrammingLanguage
             }
         }
 
-        private void LoadButton_Click(object ?sender, EventArgs e)
+        private void LoadButton_Click(object? sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
