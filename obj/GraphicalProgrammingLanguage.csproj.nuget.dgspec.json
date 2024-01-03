@@ -40,21 +40,25 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
             "Microsoft.NETCore.Platforms": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.0.4, )"
             },
             "NETStandard.Library": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.0.3, )"
             },
             "NUnit": {
               "target": "Package",
-              "version": "[3.13.3, )"
+              "version": "[3.14.0, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.4.2, )"
+              "version": "[4.5.0, )"
             }
           },
           "imports": [

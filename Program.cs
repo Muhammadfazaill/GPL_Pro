@@ -212,7 +212,7 @@ namespace GraphicalProgrammingLanguage
         }
 
         [STAThread]
-        static void Main()
+        static void Mainform()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
