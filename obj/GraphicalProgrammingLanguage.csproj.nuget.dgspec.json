@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj": {}
+    "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj": {
+    "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
+        "projectUniqueName": "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj",
         "projectName": "GraphicalProgrammingLanguage",
-        "projectPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
+        "projectPath": "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj",
         "packagesPath": "C:\\Users\\fahad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\obj\\",
+        "outputPath": "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,25 +40,13 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.8.0, )"
-            },
-            "Microsoft.NETCore.Platforms": {
-              "target": "Package",
-              "version": "[7.0.4, )"
-            },
-            "NETStandard.Library": {
-              "target": "Package",
-              "version": "[2.0.3, )"
-            },
             "NUnit": {
               "target": "Package",
-              "version": "[3.14.0, )"
+              "version": "[3.13.3, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.4.2, )"
             }
           },
           "imports": [
