@@ -1,35 +1,99 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj": {}
+    "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj": {
+    "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj",
-        "projectName": "Tests",
-        "projectPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\fahad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\obj\\",
+        "projectUniqueName": "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj",
+        "projectName": "GraphicalProgrammingLanguage",
+        "projectPath": "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj",
+        "packagesPath": "C:\\Users\\Ali H\\.nuget\\packages\\",
+        "outputPath": "d:\\Projects\\GraphicalProgrammingLanguage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Ali H\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\Ali H\\.nuget\\packages\\",
+        "outputPath": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Ali H\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj": {
-                "projectPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj"
+              "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj": {
+                "projectPath": "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj"
               }
             }
           }
@@ -81,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

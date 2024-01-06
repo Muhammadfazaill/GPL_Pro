@@ -377,6 +377,23 @@
             "related": ".xml"
           }
         }
+      },
+      "GraphicalProgrammingLanguage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "NUnit": "3.13.3",
+          "NUnit3TestAdapter": "4.4.2"
+        },
+        "compile": {
+          "bin/placeholder/GraphicalProgrammingLanguage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GraphicalProgrammingLanguage.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -969,11 +986,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "GraphicalProgrammingLanguage/1.0.0": {
+      "type": "project",
+      "path": "../GraphicalProgrammingLanguage.csproj",
+      "msbuildProject": "../GraphicalProgrammingLanguage.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
+      "GraphicalProgrammingLanguage >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
@@ -982,34 +1004,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fahad\\.nuget\\packages\\": {}
+    "C:\\Users\\Ali H\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj",
+      "projectUniqueName": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\fahad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\Tests\\obj\\",
+      "projectPath": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\Ali H\\.nuget\\packages\\",
+      "outputPath": "d:\\Projects\\GraphicalProgrammingLanguage\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fahad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Ali H\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj": {
-              "projectPath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj"
+            "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj": {
+              "projectPath": "d:\\Projects\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj"
             }
           }
         }
@@ -1061,19 +1081,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
-      "targetGraphs": [
-        "net7.0-windows7.0"
-      ]
-    }
-  ]
+  }
 }
