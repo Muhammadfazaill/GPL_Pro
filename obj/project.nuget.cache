@@ -1,13 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "zN4MdewaS/bgzqpxmfhBXotoVa0VoehM6lPZ5B42hGvwp9TxKldSESsqQYPgYC5bnCfI/kCKxR8ojUwTETxN/w==",
+  "dgSpecHash": "zL+lGnkaRPgsEfVT8g065cl7LRZ38U/TfiwJtSQpn+u4P7W25jMZOgzjDRGfItjOV9TVBqlFlPOfuIIi56l7sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fahad\\Desktop\\New folder\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage\\GraphicalProgrammingLanguage.csproj",
+  "projectFilePath": "C:\\Users\\fahad\\Desktop\\Fazail\\ASE\\GPL_pro\\GraphicalProgrammingLanguage.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\fahad\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
-    "C:\\Users\\fahad\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
-    "C:\\Users\\fahad\\.nuget\\packages\\nunit3testadapter\\4.4.2\\nunit3testadapter.4.4.2.nupkg.sha512"
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.net.test.sdk\\17.8.0\\microsoft.net.test.sdk.17.8.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.netcore.platforms\\7.0.4\\microsoft.netcore.platforms.7.0.4.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\nunit\\3.14.0\\nunit.3.14.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512",
+    "C:\\Users\\fahad\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

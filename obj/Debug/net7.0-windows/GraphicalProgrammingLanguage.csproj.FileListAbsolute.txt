@@ -44,3 +44,11 @@ C:\Users\fahad\Desktop\New folder\GraphicalProgrammingLanguage\GraphicalProgramm
 C:\Users\fahad\Desktop\New folder\GraphicalProgrammingLanguage\GraphicalProgrammingLanguage\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.pdb
 C:\Users\fahad\Desktop\New folder\GraphicalProgrammingLanguage\GraphicalProgrammingLanguage\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.genruntimeconfig.cache
 C:\Users\fahad\Desktop\New folder\GraphicalProgrammingLanguage\GraphicalProgrammingLanguage\obj\Debug\net7.0-windows\ref\GraphicalProgrammingLanguage.dll
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.csproj.AssemblyReference.cache
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.AssemblyInfoInputs.cache
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.AssemblyInfo.cs
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.csproj.CoreCompileInputs.cache
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.dll
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\refint\GraphicalProgrammingLanguage.dll
+C:\Users\fahad\Desktop\Fazail\ASE\GPL_pro\obj\Debug\net7.0-windows\GraphicalProgrammingLanguage.pdb

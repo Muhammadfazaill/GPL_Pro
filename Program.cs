@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GraphicalProgrammingLanguage
 {
@@ -14,11 +15,14 @@ namespace GraphicalProgrammingLanguage
         private Button runButton = new Button();
         private Button syntaxCheckButton = new Button();
         private PictureBox resultBox = new PictureBox();
+        private Graphics resultBoxGraphics;
         private CommandParser parser;
         private KeyboardControl keyboardControl = new KeyboardControl();
         private Label statusLabel = new Label();
         private Button saveButton = new Button();
         private Button loadButton = new Button();
+        private Button openNewThread = new Button();
+        private List<Form> additionalForms = new List<Form>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MainForm"/> class.
@@ -26,7 +30,8 @@ namespace GraphicalProgrammingLanguage
         public MainForm()
         {
             InitializeComponent();
-            parser = new CommandParser(resultBox.CreateGraphics());
+            this.resultBoxGraphics = resultBox.CreateGraphics();
+            parser = new CommandParser(resultBoxGraphics);
         }
 
         /// <summary>
@@ -68,12 +73,74 @@ namespace GraphicalProgrammingLanguage
             saveButton.Text = "Save";
             saveButton.Size = new System.Drawing.Size(195, 30);
             saveButton.Location = new System.Drawing.Point(10, 300);
-            saveButton.Click += SaveButton_Click;
+            saveButton.Click += (sender, e) =>
+            {
+                SaveButton_Click(sender, e, programTextBox);
+            };
 
             loadButton.Text = "Load";
             loadButton.Size = new System.Drawing.Size(195, 30);
             loadButton.Location = new System.Drawing.Point(215, 300);
-            loadButton.Click += LoadButton_Click;
+            loadButton.Click += (sender, e) =>
+            {
+                LoadButton_Click(sender, e, programTextBox);
+            };
+            openNewThread.Text = "Open New Thread";
+            openNewThread.Size = new System.Drawing.Size(195, 30);
+            openNewThread.Location = new System.Drawing.Point(215, 340);
+
+            openNewThread.Click += OpenNewThread_Click;
+            
+            void OpenNewThread_Click(object ?sender, EventArgs e)
+            {
+                // Create a new form on the UI thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    Form newForm = new Form();
+
+                    TextBox programTextBox = new TextBox();
+                    programTextBox.Multiline = true;
+                    programTextBox.Size = new System.Drawing.Size(815, 200);
+                    programTextBox.Location = new System.Drawing.Point(10, 10);
+                    programTextBox.ScrollBars = ScrollBars.Vertical;
+
+                    Button saveButton = new Button();
+                    saveButton.Text = "Save";
+                    saveButton.Size = new System.Drawing.Size(195, 30);
+                    saveButton.Location = new System.Drawing.Point(10, 220);
+                    saveButton.Click += (sender, e) =>
+                    {
+                        SaveButton_Click(sender, e, programTextBox);
+                    };
+
+                    Button loadButton = new Button();
+                    loadButton.Text = "Load";
+                    loadButton.Size = new System.Drawing.Size(195, 30);
+                    loadButton.Location = new System.Drawing.Point(215, 220);
+                    loadButton.Click += (sender, e) =>
+                    {
+                        LoadButton_Click(sender, e, programTextBox);
+                    };
+
+                    KeyboardControl keyboardControl = new KeyboardControl();
+                    keyboardControl.Location = new System.Drawing.Point(10, 260);
+
+                    newForm.Size = new System.Drawing.Size(855, 550);
+                    newForm.StartPosition = FormStartPosition.CenterScreen;
+                    newForm.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+                    newForm.Controls.Add(programTextBox);
+                    newForm.Controls.Add(keyboardControl);
+                    newForm.Controls.Add(saveButton);
+                    newForm.Controls.Add(loadButton);
+
+                    keyboardControl.SetActiveTextBox(programTextBox);
+
+                    newForm.Show();
+
+                    additionalForms.Add(newForm);
+                });
+            }
 
             resultBox.Size = new System.Drawing.Size(400, 400);
             resultBox.Location = new System.Drawing.Point(430, 10);
@@ -96,9 +163,10 @@ namespace GraphicalProgrammingLanguage
             this.Controls.Add(syntaxCheckButton);
             this.Controls.Add(saveButton);
             this.Controls.Add(loadButton);
+            this.Controls.Add(openNewThread);
             this.Controls.Add(resultBox);
             this.Controls.Add(statusLabel);
-
+            
             keyboardControl = new KeyboardControl();
             this.Controls.Add(keyboardControl);
             keyboardControl.BringToFront();
@@ -106,7 +174,7 @@ namespace GraphicalProgrammingLanguage
             keyboardControl.Visible = true;
         }
 
-        private void RunButton_Click(object? sender, EventArgs e)
+        private async void RunButton_Click(object ?sender, EventArgs e)
         {
             string command = commandTextBox.Text.Trim();
 
@@ -126,14 +194,31 @@ namespace GraphicalProgrammingLanguage
 
             if (command == "RUN")
             {
-                string program = programTextBox.Text;
+                parser.ResetProgram();
 
-                if (!parser.SyntaxCheckProgram(program))
-                {
-                    return;
-                }
+                string mainFormProgram = programTextBox.Text;
 
-                parser.ExecuteProgram(program);
+                // Create tasks for the main form program and additional forms
+                var mainFormTask = Task.Run(() => ExecuteProgramOnUIThread(mainFormProgram));
+
+                var additionalFormTasks = additionalForms
+                    .Select(form => Task.Run(() =>
+                    {
+                        TextBox additionalFormProgramTextBox = form.Controls.OfType<TextBox>().FirstOrDefault()!;
+                        string additionalFormProgram = additionalFormProgramTextBox.Text;
+                        if (!string.IsNullOrWhiteSpace(additionalFormProgram))
+                        {
+                            ExecuteProgramOnUIThread(additionalFormProgram);
+                        }
+                    }));
+
+                await Task.WhenAll(mainFormTask, Task.WhenAll(additionalFormTasks));
+
+                Point currentPosition = parser.GetCurrentPosition();
+                bool isFillOn = parser.IsFillOn();
+                string currentColor = parser.GetCurrentColor();
+
+                statusLabel.Text = $"Position: {currentPosition}\nFill: {(isFillOn ? "On" : "Off")}\nColor: {currentColor}";
             }
             else
             {
@@ -142,19 +227,53 @@ namespace GraphicalProgrammingLanguage
                     return;
                 }
 
-                parser.ExecuteCommand(command);
+                int i = 0;
+                parser.ExecuteCommand(command, ref i);
             }
-
-            Point currentPosition = parser.GetCurrentPosition();
-            bool isFillOn = parser.IsFillOn();
-            string currentColor = parser.GetCurrentColor();
-
-            statusLabel.Text = $"Position: {currentPosition}\nFill: {(isFillOn ? "On" : "Off")}\nColor: {currentColor}";
         }
 
-        private void SyntaxCheckButton_Click(object? sender, EventArgs e)
+        private void ExecuteProgramOnUIThread(string program)
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                // create a new parser for each program
+                CommandParser parser = new CommandParser(resultBoxGraphics);
+
+                if (!parser.SyntaxCheckProgram(program))
+                {
+                    return;
+                }
+
+                parser.ExecuteProgram(program);
+            });
+        }
+
+        private void SyntaxCheckButton_Click(object ?sender, EventArgs e)
         {
             string programText = programTextBox.Text;
+
+            if (programText.Trim() == "")
+            {
+                // try to syntax check the command
+                string command = commandTextBox.Text.Trim();
+
+                if (command == "")
+                {
+                    MessageBox.Show("Please enter a command.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (parser.SyntaxCheckLine(command))
+                {
+                    MessageBox.Show("Syntax check successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Syntax was not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return;
+            }
 
             if (parser.SyntaxCheckProgram(programText))
             {
@@ -166,7 +285,7 @@ namespace GraphicalProgrammingLanguage
             }
         }
 
-        private void SaveButton_Click(object? sender, EventArgs e)
+        private void SaveButton_Click(object ?sender, EventArgs e, TextBox programTextBox)
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
@@ -188,7 +307,7 @@ namespace GraphicalProgrammingLanguage
             }
         }
 
-        private void LoadButton_Click(object? sender, EventArgs e)
+        private void LoadButton_Click(object ?sender, EventArgs e, TextBox programTextBox)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -212,7 +331,7 @@ namespace GraphicalProgrammingLanguage
         }
 
         [STAThread]
-        static void Mainform()
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
